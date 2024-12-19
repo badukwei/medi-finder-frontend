@@ -1,0 +1,66 @@
+.tag-container {
+	display: flex;
+	flex-wrap: wrap;
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		.tag {
+			background-color: $outline;
+			padding: 10px 12px;
+			border-radius: 3px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			font-size: 14px;
+			cursor: grab;
+		}
+		.remove-tag {
+			background: none;
+			border: none;
+			color: $on-surface;
+			cursor: pointer;
+			font-size: 20px;
+		}
+	}
+}
+
+.tag-input-container {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+    border: 1px solid $outline;
+    border-radius: 3px;
+    padding: 15px 18px;
+	.tag-input {
+		border: none !important;
+		outline: none !important;
+		font-size: 14px !important;
+		flex: 1 !important;
+	}
+    .add-icon {
+        cursor: pointer;
+        color: $variant-1;
+        transition: all 0.3s ease;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.form-add-button {
+	border: 1px solid $variant-1;
+	&:hover {
+		border-color: $on-surface;
+		background-color: $on-surface;
+		.add-icon {
+			color: $white;
+		}
+	}
+	.add-icon {
+		color: $variant-1;
+		font-size: 32px;
+	}
+}
