@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function BackToTop() {
+const BackToTop = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrolled, setScrolled] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(500);
@@ -10,7 +10,7 @@ export default function BackToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // You can use 'auto' or 'instant' as well
+      behavior: "smooth",
     });
   };
 
@@ -32,6 +32,7 @@ export default function BackToTop() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div
       className={`progress-wrap ${scrolled > 150 ? "active-progress" : ""}`}
@@ -54,4 +55,6 @@ export default function BackToTop() {
       </svg>
     </div>
   );
-}
+};
+
+export default BackToTop;

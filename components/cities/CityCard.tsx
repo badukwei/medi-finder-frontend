@@ -3,6 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Rating from "@mui/material/Rating";
 
+interface CityCardProps {
+	link: string;
+	imageUrl: string;
+	cityName: string;
+	country: string;
+	generalRating: number;
+	overview: string;
+}
+
 const CityCard = ({
 	link,
 	imageUrl,
@@ -10,7 +19,7 @@ const CityCard = ({
 	country,
 	generalRating,
 	overview,
-}) => {
+}: CityCardProps) => {
 	const title = `${cityName}, ${country}`;
 	const maxLength = 90;
 	const truncatedOverview =

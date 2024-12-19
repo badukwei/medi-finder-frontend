@@ -1,6 +1,11 @@
 'use client';
 import React, { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
+import {
+	DragDropContext,
+	Droppable,
+	Draggable,
+	DropResult,
+} from "@hello-pangea/dnd";
 import { MdLibraryAddCheck, MdAddCircleOutline } from 'react-icons/md';
 import Rating from '@mui/material/Rating';
 
@@ -20,33 +25,33 @@ const VaccinesInfoFormModal = () => {
         },
     ]);
 
-    const handleEditClick = (index) => {
+    const handleEditClick = (index: number) => {
         setVaccinesRecommended((prev) => prev.map((vaccine, i) => (i === index ? { ...vaccine, isEditing: true } : { ...vaccine, isEditing: false })));
     };
 
-    const handleNameChange = (index, newName) => {
+    const handleNameChange = (index: number, newName: string) => {
         setVaccinesRecommended((prev) => prev.map((vaccine, i) => (i === index ? { ...vaccine, vaccine: newName } : vaccine)));
     };
 
-    const handleBlur = (index) => {
+    const handleBlur = (index: number) => {
         setVaccinesRecommended((prev) => prev.map((vaccine, i) => (i === index ? { ...vaccine, isEditing: false } : vaccine)));
     };
 
-    const handleDelete = (index) => {
+    const handleDelete = (index: number) => {
         setVaccinesRecommended((prev) => prev.filter((_, i) => i !== index));
     };
 
-    const handleDragEnd = (result) => {
-        const { source, destination } = result;
+    const handleDragEnd = (result: DropResult) => {
+		const { source, destination } = result;
 
-        if (!destination) return;
+		if (!destination) return;
 
-        const items = Array.from(vaccinesRecommended);
-        const [reorderedItem] = items.splice(source.index, 1);
-        items.splice(destination.index, 0, reorderedItem);
+		const items = Array.from(vaccinesRecommended);
+		const [reorderedItem] = items.splice(source.index, 1);
+		items.splice(destination.index, 0, reorderedItem);
 
-        setVaccinesRecommended(items);
-    };
+		setVaccinesRecommended(items);
+	};
 
     return (
         <div className="modal modal-account fade" id="modalVaccinesInfoForm">

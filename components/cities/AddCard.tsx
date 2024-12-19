@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import Rating from '@mui/material/Rating';
 import { MdAddTask } from 'react-icons/md';
@@ -12,7 +11,6 @@ const AddCard = () => {
                     <div className="images-group cursor-pointer">
                         <div className="images-style position-relative ">
                             <Image className="imageUrl opacity-15" alt="img" src="/images/cities/image.png" width={615} height={405} />
-
                             <MdAddTask size={48} className="add-icon position-absolute top-50 start-50 translate-middle text-variant-1" />
                         </div>
                     </div>

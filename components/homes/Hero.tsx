@@ -9,7 +9,7 @@ export default function Hero() {
                       <div className="slider-content">
                           <div className="d-flex flex-column align-items-center text-center gap-12">
                               <div className="title-large text-white animationtext slide">
-                                  Find Your <WordEffect string={['Dream Clinic', 'Perfect Clinic']} />
+                                  Find Your <WordEffect strings={['Dream Clinic', 'Perfect Clinic']} />
                               </div>
                               <p className="text-white body-2 wow fadeInUp mt-6 w-75 mx-auto" data-wow-delay=".2s">
                                   MediFinder helps you locate trusted clinics, hospitals, and pharmacies worldwide
